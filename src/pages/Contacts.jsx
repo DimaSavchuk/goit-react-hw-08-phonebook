@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CircularProgress, Heading, Text } from '@chakra-ui/react';
+import { CircularProgress, Heading } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
@@ -21,9 +21,7 @@ const Contacts = () => {
       </Heading>
       <ContactForm />
       <Filter />
-      <Text fontSize="lg">
-        {isLoading && <CircularProgress isIndeterminate color="purple.500" />}
-      </Text>
+      {isLoading && <CircularProgress isIndeterminate color="purple.500" />}
       <ContactsList />
     </div>
   );

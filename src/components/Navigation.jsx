@@ -2,13 +2,10 @@ import { ROUTER } from 'Routers/Routes';
 import { useAuth } from 'hooks';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Box, Flex, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Link } from '@chakra-ui/react';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
-
-  const activeLinkColor = useColorModeValue('white', 'purple.200');
-  const activeLinkBg = useColorModeValue('gray.400', 'gray.300');
 
   return (
     <nav>
