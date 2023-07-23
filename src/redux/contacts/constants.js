@@ -25,3 +25,9 @@ export const handleDelete = (state, action) => {
   const index = state.items.findIndex(item => item.id === action.payload.id);
   state.items.splice(index, 1);
 };
+
+export const handleLogOut = state => {
+  state.item = [];
+  state.error = null;
+  state.isLoading = false;
+};

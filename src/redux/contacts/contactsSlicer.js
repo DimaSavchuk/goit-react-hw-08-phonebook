@@ -6,9 +6,11 @@ import {
   handleAdd,
   handleDelete,
   handleFetch,
+  handleLogOut,
   handlePending,
   handleRejected,
 } from './constants';
+import { logOut } from 'redux/auth/operations';
 
 const contactsSlicer = createSlice({
   name: 'contacts',
@@ -27,7 +29,8 @@ const contactsSlicer = createSlice({
       .addCase(addContacts.rejected, handleRejected)
       .addCase(deleteContacts.pending, handlePending)
       .addCase(deleteContacts.fulfilled, handleDelete)
-      .addCase(deleteContacts.rejected, handleRejected),
+      .addCase(deleteContacts.rejected, handleRejected)
+      .addCase(logOut.fulfilled, handleLogOut),
 });
 
 export const contactsReducer = contactsSlicer.reducer;
